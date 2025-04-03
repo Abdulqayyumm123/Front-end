@@ -28,7 +28,7 @@ function Navigationbar() {
       fetchData();
     }, []);
   const { loggedIn, data } = useSelector((state) => state.Login);
-  // const {  signloggen } = useSelector((state) => state.Signup);
+  // const {  loggedIn } = useSelector((state) => state.Signup);
   const user = data?.currentuser
   const dispatch = useDispatch();
   let navigate = useNavigate();

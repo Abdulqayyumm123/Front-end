@@ -63,41 +63,25 @@ function Detail(){
   </div>
              <h3>Description</h3>
             <p>{post.description}</p>
-            <h3>Features</h3>
+<h3>Features</h3>
 <ul className="ps-0" style={{ listStyle: "none" }}>
-  <li className="d-flex align-items-center mb-2">
-    <GoCheck className="text-success me-2" size={15}/>{post.feature}</li>
-  {/*<li className="d-flex align-items-center mb-2">
-    <GoCheck className="text-success me-2" size={15} /> 10-speed automatic transmission
-  </li>
-  <li className="d-flex align-items-center mb-2">
-    <GoCheck className="text-success me-2" size={15} /> Rear-wheel drive
-  </li>
-  <li className="d-flex align-items-center mb-2">
-    <GoCheck className="text-success me-2" size={15} /> Leather-trimmed seats
-  </li>
-  <li className="d-flex align-items-center mb-2">
-    <GoCheck className="text-success me-2" size={15} /> 12-inch digital instrument cluster
-  </li>
-  <li className="d-flex align-items-center mb-2">
-    <GoCheck className="text-success me-2" size={15} /> SYNC 3 infotainment system with Apple CarPlay and Android Auto
-  </li>
-  <li className="d-flex align-items-center mb-2">
-    <GoCheck className="text-success me-2" size={15} /> Bang & Olufsen premium audio system
-  </li>
-  <li className="d-flex align-items-center mb-2">
-    <GoCheck className="text-success me-2" size={15} /> Adaptive cruise control
-  </li>
-  <li className="d-flex align-items-center mb-2">
-    <GoCheck className="text-success me-2" size={15} /> Lane keep assist
-  </li>
-  <li className="d-flex align-items-center mb-2">
-    <GoCheck className="text-success me-2" size={15} /> Blind spot monitoring
-  </li>
-  <li className="d-flex align-items-center mb-2">
-    <GoCheck className="text-success me-2" size={15} /> Rear cross-traffic alert
-  </li> */}
+  {Array.isArray(post.features) ? (
+    post.features.map((feature, index) => (
+      <li key={index} className="d-flex align-items-center mb-2">
+        <GoCheck className="text-success me-2" size={15} /> {feature}
+      </li>
+    ))
+  ) : post.features ? ( 
+    post.features.split(",").map((feature, index) => ( 
+      <li key={index} className="d-flex align-items-center mb-2">
+        <GoCheck className="text-success me-2" size={15} /> {feature.trim()}
+      </li>
+    ))
+  ) : (
+    <li>No features available</li>
+  )}
 </ul>
+
 
 </Col>
 <Col md={4}>

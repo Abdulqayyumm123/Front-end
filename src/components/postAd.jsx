@@ -70,6 +70,7 @@ function PostAd({ show, handleClose }) {
   adData.append('name' , formData.name)
   adData.append('description' , formData.description)
   adData.append('price' , formData.price)
+  adData.append('features' , formData.features)
   adData.append('startson' , formData.startson)
   adData.append('endson' , formData.endson)
   adData.append('categoryid' , formData.categoryid)

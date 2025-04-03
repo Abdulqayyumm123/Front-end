@@ -50,7 +50,7 @@ function Userdashboard(){
     const fetchAds = async () => {
       try {
         if (!user || !user._id) return; 
-        const response = await fetch(`http://localhost:5000/api/v1/advertisement`);
+        const response = await fetch(` http://localhost:5000/api/v1/advertisement`);
         const adsData = await response.json();
         console.log(adsData);
         const filteredAds = adsData.filter((ad) => ad.postedbyid._id == user._id);
@@ -117,7 +117,8 @@ function Userdashboard(){
               <Card key={ad._id} className="m-2">
                 <Row className="m-1 d-flex align-items-center">
                   <Col md={3} className="text-center">
-                    <Card.Img src={`http://localhost:5000/public/images/${ad.image}`} className="img-fluid"  />
+                    <Card.Img src={`http://localhost:5000/public/images/${ad.image}`} className="img-fluid" 
+                       style={{ width: "100%", height: "150px", objectFit: "cover" }} />
                   </Col>
                   <Col md={9}>
                     <Card.Title>{ad.name}</Card.Title>

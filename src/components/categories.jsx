@@ -46,7 +46,10 @@ function Categories() {
           <Card className="m-3">
             <Row className=" m-3">
               <Col md={3}>
-                <Card.Img src={ post.image != null ? `http://localhost:5000/public/images/${post.image}` : `http://localhost:5000/public/images/placeholder-img.jpg` }/>
+                <Card.Img src={ post.image != null ? `http://localhost:5000/public/images/${post.image}` : `http://localhost:5000/public/images/placeholder-img.jpg` }
+                 className="img-fluid"
+                 style={{ width: "100%", height: "200px", objectFit: "cover" }}
+                />
               </Col>
               <Col md={9}>
                 <Card.Body>
